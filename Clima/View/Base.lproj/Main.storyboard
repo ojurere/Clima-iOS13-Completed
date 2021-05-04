@@ -56,7 +56,7 @@
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
                                                 <connections>
                                                     <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iiE-ha-qON"/>
-                                                    <segue destination="UJ8-tf-39K" kind="show" id="ZUR-il-VNg"/>
+                                                    <segue destination="UJ8-tf-39K" kind="show" identifier="ResultsSegue" id="ZUR-il-VNg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -136,26 +136,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsX-pb-ggO">
-                                <rect key="frame" x="84" y="298" width="247" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                <color key="textColor" red="0.94117647058823528" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hmm-Yk-u1c">
-                                <rect key="frame" x="91" y="147" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wva-fV-Agq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="5sQ-s5-LF2"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rFQ-d2-TJx"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4wZ-Zm-JZC"/>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.27843137254901962" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wva-fV-Agq" firstAttribute="top" secondItem="4wZ-Zm-JZC" secondAttribute="top" id="2tO-Kf-PON"/>
+                            <constraint firstItem="wva-fV-Agq" firstAttribute="trailing" secondItem="4wZ-Zm-JZC" secondAttribute="trailing" id="B7W-kZ-fqk"/>
+                            <constraint firstItem="wva-fV-Agq" firstAttribute="leading" secondItem="4wZ-Zm-JZC" secondAttribute="leading" id="H4a-2P-89R"/>
+                            <constraint firstAttribute="bottom" secondItem="wva-fV-Agq" secondAttribute="bottom" id="jQf-eU-T3F"/>
+                            <constraint firstItem="wva-fV-Agq" firstAttribute="centerX" secondItem="jAO-17-lMJ" secondAttribute="centerX" id="tnh-dG-YLR"/>
+                            <constraint firstItem="wva-fV-Agq" firstAttribute="centerY" secondItem="jAO-17-lMJ" secondAttribute="centerY" id="uqb-VS-Pwh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5vc-4U-mIc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lad-A4-Azk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="124"/>
+            <point key="canvasLocation" x="844.92753623188412" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>

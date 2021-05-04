@@ -15,17 +15,17 @@ protocol WeatherManagerDelegate {
 }
 
 struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=7e6e2b6223caaef352572f4b1b557152&units=metric"
+    let playerURL = "https://api-nba-v1.p.rapidapi.com/players/lastName/"
     
     var delegate: WeatherManagerDelegate?
     
-    func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
+    func fetchWeather(lastName: String) {
+        let urlString = "\(playerURL)\(lastName)"
         performRequest(with: urlString)
     }
     
     func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+        let urlString = "\(playerURL)&lat=\(latitude)&lon=\(longitude)"
         performRequest(with: urlString)
     }
     
@@ -35,7 +35,7 @@ struct WeatherManager {
             "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api-nba-v1.p.rapidapi.com/players/lastName/Harden")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
