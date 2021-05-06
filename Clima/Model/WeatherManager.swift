@@ -66,12 +66,32 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            let id = decodedData.weather[0].id
-            let temp = decodedData.main.temp
-            let name = decodedData.firstName
+//            let id = decodedData.weather[0].id
+//            let temp = decodedData.main.temp
+//            let name =
+              print(decodedData.api.status)
+              print(decodedData.api.players[0].firstName)
+              print(decodedData.api.players[0].lastName)
+//              print(decodedData.api.players[0].teamId)
+              print(decodedData.api.players[0].yearsPro)
+              print(decodedData.api.players[0].collegeName)
+              print(decodedData.api.players[0].country)
+              print(decodedData.api.players[0].dateOfBirth)
+              print(decodedData.api.players[0].startNba)
+              print(decodedData.api.players[0].heightInMeters)
+              print(decodedData.api.players[0].weightInKilograms)
+
+
+
+
+
             
-            let weather = WeatherModel(conditionId: id, firstName: name, temperature: temp)
-            return weather
+
+
+
+            
+//            let weather = WeatherModel(//conditionId: id, firstName: name, temperature: temp)
+            return nil
             
         } catch {
             print(error)
