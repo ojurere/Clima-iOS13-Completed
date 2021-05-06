@@ -22,7 +22,7 @@ struct Api: Codable {
 struct Players: Codable {
     let firstName: String
     let lastName: String
-//    let teamId: String
+    let teamId: String
     let yearsPro: String
     let collegeName: String
     let country: String

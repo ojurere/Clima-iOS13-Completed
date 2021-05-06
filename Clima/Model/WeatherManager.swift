@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: PlayerModel)
     func didFailWithError(error: Error)
 }
 
@@ -62,17 +62,21 @@ struct WeatherManager {
         }
     }
     
-    func parseJSON(_ weatherData: Data) -> (WeatherModel?) {
+    func parseJSON(_ weatherData: Data) -> (PlayerModel?) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
 //            let id = decodedData.weather[0].id
 //            let temp = decodedData.main.temp
-//            let name =
+            let firstName = decodedData.api.players[0].firstName
+            let lastName = decodedData.api.players[0].lastName
+        
+            let player = PlayerModel(firstN: firstName, lastN: lastName)
+            
               print(decodedData.api.status)
               print(decodedData.api.players[0].firstName)
               print(decodedData.api.players[0].lastName)
-//              print(decodedData.api.players[0].teamId)
+              print(decodedData.api.players[0].teamId)
               print(decodedData.api.players[0].yearsPro)
               print(decodedData.api.players[0].collegeName)
               print(decodedData.api.players[0].country)
@@ -90,7 +94,6 @@ struct WeatherManager {
 
 
             
-//            let weather = WeatherModel(//conditionId: id, firstName: name, temperature: temp)
             return nil
             
         } catch {
