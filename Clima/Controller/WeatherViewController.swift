@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, PlayerManagerDelegate {
+class WeatherViewController: UIViewController {
     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -74,7 +74,7 @@ extension WeatherViewController: PlayerManagerDelegate {
         DispatchQueue.main.async {
 //            self.temperatureLabel.text = weather.temperatureString
 //            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-//            self.cityLabel.text = weather.firstName
+            self.cityLabel.text = player.firstN
         }
     }
     
