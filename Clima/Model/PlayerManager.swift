@@ -77,6 +77,7 @@ struct PlayerManager {
             let player = PlayerModel(team: teamId!, firstN: firstName, lastN: lastName)
             
             print(player.firstN)
+            print(player.lastN)
             
             
             

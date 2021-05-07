@@ -27,9 +27,11 @@ class WeatherViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        //weatherManager.delegate = self
+        weatherManager.delegate = self
         searchTextField.delegate = self
     }
+    
+    var player : PlayerModel?
 
 }
 
@@ -66,26 +68,35 @@ extension WeatherViewController: UITextFieldDelegate {
     }
 }
 
-////MARK: - WeatherManagerDelegate
-//
-//
-//extension WeatherViewController: PlayerManagerDelegate {
-//    
-//    func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel) {
-//        DispatchQueue.main.async {
-////            self.temperatureLabel.text = weather.temperatureString
-//            self.conditionImageView.image = UIImage(systemName: player.teamName)
-//           // self.cityLabel.text = player.firstN
-//            self.firstNameLabel.text = player.firstN
-//        }
-//    }
-//    func didUpdatePlayerView(_ playerManager: PlayerManager, player: PlayerModel) {
-//        print("player view")
-//    }
-//    func didFailWithError(error: Error) {
-//        print(error)
-//    }
-//}
+//MARK: - WeatherManagerDelegate
+
+
+extension WeatherViewController: PlayerManagerDelegate {
+    
+    func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel) {
+        DispatchQueue.main.async {
+//            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImageView.image = UIImage(systemName: player.teamName)
+           // self.cityLabel.text = player.firstN
+            self.firstNameLabel.text = player.firstN
+            self.player = player
+            
+            self.performSegue(withIdentifier: "ResultsSegue", sender: nil)
+            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ResultsSegue" {
+            let playerViewController = segue.destination as! PlayerViewController
+            playerViewController.results = player
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
 
 //MARK: - CLLocationManagerDelegate
 

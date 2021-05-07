@@ -56,7 +56,6 @@
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
                                                 <connections>
                                                     <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iiE-ha-qON"/>
-                                                    <segue destination="UJ8-tf-39K" kind="show" identifier="ResultsSegue" id="ZUR-il-VNg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -129,6 +128,7 @@
                         <outlet property="firstNameLabel" destination="tsQ-RS-MHl" id="6E2-59-ASs"/>
                         <outlet property="searchTextField" destination="xeK-uN-ZW4" id="EN3-oB-sfG"/>
                         <outlet property="temperatureLabel" destination="xzk-6J-1Fn" id="Kuh-3M-Ho0"/>
+                        <segue destination="UJ8-tf-39K" kind="show" identifier="ResultsSegue" id="Ya0-6R-eO0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,7 +144,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAS-3p-4fy">
-                                <rect key="frame" x="82" y="157" width="42" height="21"/>
+                                <rect key="frame" x="229" y="147" width="116" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLF-6y-DVh">
+                                <rect key="frame" x="229" y="198" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -156,6 +163,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5vc-4U-mIc"/>
                     <connections>
+                        <outlet property="firstNameLabel" destination="qLF-6y-DVh" id="Xxc-kp-JXd"/>
                         <outlet property="lastNameLabel" destination="DAS-3p-4fy" id="84W-dO-18g"/>
                     </connections>
                 </viewController>
