@@ -89,13 +89,19 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsQ-RS-MHl">
+                                        <rect key="frame" x="332.5" y="309.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMV-zS-9ID">
-                                        <rect key="frame" x="276" y="309.5" width="98" height="36"/>
+                                        <rect key="frame" x="276" y="340" width="98" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ki-V4-KW4">
-                                        <rect key="frame" x="134" y="355.5" width="240" height="462.5"/>
+                                        <rect key="frame" x="134" y="386" width="240" height="432"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -120,6 +126,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="mMV-zS-9ID" id="9qV-V9-80l"/>
                         <outlet property="conditionImageView" destination="uTN-Z3-ZF1" id="QVF-Tc-1yU"/>
+                        <outlet property="firstNameLabel" destination="tsQ-RS-MHl" id="6E2-59-ASs"/>
                         <outlet property="searchTextField" destination="xeK-uN-ZW4" id="EN3-oB-sfG"/>
                         <outlet property="temperatureLabel" destination="xzk-6J-1Fn" id="Kuh-3M-Ho0"/>
                     </connections>
@@ -128,32 +135,29 @@
             </objects>
             <point key="canvasLocation" x="139" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="TVc-c3-yaa">
             <objects>
-                <viewController id="UJ8-tf-39K" sceneMemberID="viewController">
+                <viewController id="UJ8-tf-39K" customClass="PlayerViewController" customModule="Clima" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAO-17-lMJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wva-fV-Agq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="5sQ-s5-LF2"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="rFQ-d2-TJx"/>
-                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAS-3p-4fy">
+                                <rect key="frame" x="82" y="157" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4wZ-Zm-JZC"/>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.27843137254901962" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="wva-fV-Agq" firstAttribute="top" secondItem="4wZ-Zm-JZC" secondAttribute="top" id="2tO-Kf-PON"/>
-                            <constraint firstItem="wva-fV-Agq" firstAttribute="trailing" secondItem="4wZ-Zm-JZC" secondAttribute="trailing" id="B7W-kZ-fqk"/>
-                            <constraint firstItem="wva-fV-Agq" firstAttribute="leading" secondItem="4wZ-Zm-JZC" secondAttribute="leading" id="H4a-2P-89R"/>
-                            <constraint firstAttribute="bottom" secondItem="wva-fV-Agq" secondAttribute="bottom" id="jQf-eU-T3F"/>
-                            <constraint firstItem="wva-fV-Agq" firstAttribute="centerX" secondItem="jAO-17-lMJ" secondAttribute="centerX" id="tnh-dG-YLR"/>
-                            <constraint firstItem="wva-fV-Agq" firstAttribute="centerY" secondItem="jAO-17-lMJ" secondAttribute="centerY" id="uqb-VS-Pwh"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5vc-4U-mIc"/>
+                    <connections>
+                        <outlet property="lastNameLabel" destination="DAS-3p-4fy" id="84W-dO-18g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lad-A4-Azk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

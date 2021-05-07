@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var firstNameLabel: UILabel!
     
     var weatherManager = PlayerManager()
     let locationManager = CLLocationManager()
@@ -26,7 +27,7 @@ class WeatherViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        weatherManager.delegate = self
+        //weatherManager.delegate = self
         searchTextField.delegate = self
     }
 
@@ -65,23 +66,26 @@ extension WeatherViewController: UITextFieldDelegate {
     }
 }
 
-//MARK: - WeatherManagerDelegate
-
-
-extension WeatherViewController: PlayerManagerDelegate {
-    
-    func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel) {
-        DispatchQueue.main.async {
-//            self.temperatureLabel.text = weather.temperatureString
-//            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-            self.cityLabel.text = player.firstN
-        }
-    }
-    
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-}
+////MARK: - WeatherManagerDelegate
+//
+//
+//extension WeatherViewController: PlayerManagerDelegate {
+//    
+//    func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel) {
+//        DispatchQueue.main.async {
+////            self.temperatureLabel.text = weather.temperatureString
+//            self.conditionImageView.image = UIImage(systemName: player.teamName)
+//           // self.cityLabel.text = player.firstN
+//            self.firstNameLabel.text = player.firstN
+//        }
+//    }
+//    func didUpdatePlayerView(_ playerManager: PlayerManager, player: PlayerModel) {
+//        print("player view")
+//    }
+//    func didFailWithError(error: Error) {
+//        print(error)
+//    }
+//}
 
 //MARK: - CLLocationManagerDelegate
 

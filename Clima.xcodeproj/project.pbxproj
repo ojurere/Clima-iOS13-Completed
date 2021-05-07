@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94E2A3A42645909C007DB9CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E2A3A32645909C007DB9CA /* PlayerViewController.swift */; };
 		AD38C6F6231E85FF0028FD48 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD38C6F5231E85FF0028FD48 /* PlayerManager.swift */; };
 		AD38C6F8231E8A2E0028FD48 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD38C6F7231E8A2E0028FD48 /* WeatherData.swift */; };
 		AD38C6FA231EA5D20028FD48 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD38C6F9231EA5D20028FD48 /* PlayerModel.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94E2A3A32645909C007DB9CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = Clima/Controller/PlayerViewController.swift; sourceTree = SOURCE_ROOT; };
 		AD38C6F5231E85FF0028FD48 /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		AD38C6F7231E8A2E0028FD48 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		AD38C6F9231EA5D20028FD48 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		ADAA27C8231BC3E500365194 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				94E2A3A32645909C007DB9CA /* PlayerViewController.swift */,
 				ADAA27B4231BBFAF00365194 /* WeatherViewController.swift */,
 			);
 			path = Controller;
@@ -178,6 +181,7 @@
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
 				AD38C6F8231E8A2E0028FD48 /* WeatherData.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
+				94E2A3A42645909C007DB9CA /* PlayerViewController.swift in Sources */,
 				AD38C6F6231E85FF0028FD48 /* PlayerManager.swift in Sources */,
 				AD38C6FA231EA5D20028FD48 /* PlayerModel.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,

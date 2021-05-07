@@ -11,6 +11,7 @@ import CoreLocation
 
 protocol PlayerManagerDelegate {
     func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel)
+   // func didUpdatePlayerView(_ playerManager: PlayerManager, player: PlayerModel)
     func didFailWithError(error: Error)
 }
 
@@ -51,6 +52,7 @@ struct PlayerManager {
                 if let safeData = data {
                     if let player = self.parseJSON(safeData) {
                         self.delegate?.didUpdatePlayer(self, player: player)
+
                     }
                 }
                 let httpResponse = response as? HTTPURLResponse
@@ -90,7 +92,7 @@ struct PlayerManager {
 //              print(decodedData.api.players[0].heightInMeters)
 //              print(decodedData.api.players[0].weightInKilograms)
             
-            return nil
+            return player
             
         } catch {
             print(error)
