@@ -9,14 +9,14 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, PlayerManagerDelegate {
     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
-    var weatherManager = WeatherManager()
+    var weatherManager = PlayerManager()
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -68,9 +68,9 @@ extension WeatherViewController: UITextFieldDelegate {
 //MARK: - WeatherManagerDelegate
 
 
-extension WeatherViewController: WeatherManagerDelegate {
+extension WeatherViewController: PlayerManagerDelegate {
     
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: PlayerModel) {
+    func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel) {
         DispatchQueue.main.async {
 //            self.temperatureLabel.text = weather.temperatureString
 //            self.conditionImageView.image = UIImage(systemName: weather.conditionName)

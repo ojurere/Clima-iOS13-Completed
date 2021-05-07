@@ -9,15 +9,15 @@
 import Foundation
 import CoreLocation
 
-protocol WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: PlayerModel)
+protocol PlayerManagerDelegate {
+    func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel)
     func didFailWithError(error: Error)
 }
 
-struct WeatherManager {
+struct PlayerManager {
     let playerURL = "https://api-nba-v1.p.rapidapi.com/players/lastName/"
     
-    var delegate: WeatherManagerDelegate?
+    var delegate: PlayerManagerDelegate?
     
     func fetchWeather(lastName: String) {
         let urlString = "\(playerURL)\(lastName)"
@@ -49,8 +49,8 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    if let weather = self.parseJSON(safeData) {
-                        self.delegate?.didUpdateWeather(self, weather: weather)
+                    if let player = self.parseJSON(safeData) {
+                        self.delegate?.didUpdatePlayer(self, player: player)
                     }
                 }
                 let httpResponse = response as? HTTPURLResponse
@@ -68,31 +68,27 @@ struct WeatherManager {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
 //            let id = decodedData.weather[0].id
 //            let temp = decodedData.main.temp
+            let teamId = decodedData.api.players[0].teamId
             let firstName = decodedData.api.players[0].firstName
             let lastName = decodedData.api.players[0].lastName
         
-            let player = PlayerModel(firstN: firstName, lastN: lastName)
+            let player = PlayerModel(team: teamId!, firstN: firstName, lastN: lastName)
             
-              print(decodedData.api.status)
-              print(decodedData.api.players[0].firstName)
-              print(decodedData.api.players[0].lastName)
-              print(decodedData.api.players[0].teamId)
-              print(decodedData.api.players[0].yearsPro)
-              print(decodedData.api.players[0].collegeName)
-              print(decodedData.api.players[0].country)
-              print(decodedData.api.players[0].dateOfBirth)
-              print(decodedData.api.players[0].startNba)
-              print(decodedData.api.players[0].heightInMeters)
-              print(decodedData.api.players[0].weightInKilograms)
-
-
-
-
-
+            print(player.firstN)
             
-
-
-
+            
+            
+//              print(decodedData.api.status)
+//              print(decodedData.api.players[0].firstName)
+//              print(decodedData.api.players[0].lastName)
+//              print(decodedData.api.players[0].teamId)
+//              print(decodedData.api.players[0].yearsPro)
+//              print(decodedData.api.players[0].collegeName)
+//              print(decodedData.api.players[0].country)
+//              print(decodedData.api.players[0].dateOfBirth)
+//              print(decodedData.api.players[0].startNba)
+//              print(decodedData.api.players[0].heightInMeters)
+//              print(decodedData.api.players[0].weightInKilograms)
             
             return nil
             
