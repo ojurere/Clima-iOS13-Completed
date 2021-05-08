@@ -9,9 +9,17 @@
 import UIKit
 
 class PlayerViewController: UIViewController {
+    @IBOutlet weak var teamIdImageView: UIImageView!
     @IBOutlet weak var lastNameLabel: UILabel!
     
     @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var yearsProLabel: UILabel!
+    @IBOutlet weak var collegeNameLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var dateOfBirthLabel: UILabel!
+    @IBOutlet weak var startNbaLabel: UILabel!
+    @IBOutlet weak var heightInMetersLabel: UILabel!
+    @IBOutlet weak var weightInKilogramsLabel: UILabel!
     var results: PlayerModel!
     
     override func viewDidLoad() {
@@ -23,8 +31,16 @@ class PlayerViewController: UIViewController {
 
 
     func displayResult() {
+        teamIdImageView.image = UIImage(imageLiteralResourceName: results.teamName)
         lastNameLabel.text = results.lastN
         firstNameLabel.text = results.firstN
+        yearsProLabel.text = results.years
+        collegeNameLabel.text = results.college
+        countryLabel.text = results.place
+        dateOfBirthLabel.text = results.DOB
+        startNbaLabel.text = results.start
+        heightInMetersLabel.text = results.height
+        weightInKilogramsLabel.text = results.weight
     }
 }
     

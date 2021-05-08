@@ -12,6 +12,13 @@ struct PlayerModel {
     let team: String
     let firstN: String
     let lastN: String
+    let years: String
+    let college: String
+    let place: String
+    let DOB: String
+    let start: String
+    let height: String
+    let weight: String
     
 //    var temperatureString: String {
 //        return String(format: "%.1f", temperature)

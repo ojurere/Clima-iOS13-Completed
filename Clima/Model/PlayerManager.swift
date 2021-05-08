@@ -73,12 +73,21 @@ struct PlayerManager {
             let teamId = decodedData.api.players[0].teamId
             let firstName = decodedData.api.players[0].firstName
             let lastName = decodedData.api.players[0].lastName
+            let yearsPro = decodedData.api.players[0].yearsPro
+            let collegeName = decodedData.api.players[0].collegeName
+            let country = decodedData.api.players[0].country
+            let dateOfBirth = decodedData.api.players[0].dateOfBirth
+            let startNba = decodedData.api.players[0].startNba
+            let heightInMeters = decodedData.api.players[0].heightInMeters
+            let weightInKilograms = decodedData.api.players[0].weightInKilograms
         
-            let player = PlayerModel(team: teamId!, firstN: firstName, lastN: lastName)
+            let player = PlayerModel(team: teamId!, firstN: firstName, lastN: lastName, years: yearsPro, college: collegeName, place: country, DOB: dateOfBirth, start: startNba, height: heightInMeters, weight: weightInKilograms)
             
-            print(player.firstN)
-            print(player.lastN)
-            
+            print(player)
+//            print(player.firstN)
+//            print(player.lastN)
+//            print(player.years)
+//            
             
             
 //              print(decodedData.api.status)

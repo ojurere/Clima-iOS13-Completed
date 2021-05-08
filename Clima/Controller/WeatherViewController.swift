@@ -76,7 +76,7 @@ extension WeatherViewController: PlayerManagerDelegate {
     func didUpdatePlayer(_ playerManager: PlayerManager, player: PlayerModel) {
         DispatchQueue.main.async {
 //            self.temperatureLabel.text = weather.temperatureString
-            self.conditionImageView.image = UIImage(systemName: player.teamName)
+//            self.conditionImageView.image = UIImage(systemName: player.teamName)
            // self.cityLabel.text = player.firstN
             self.firstNameLabel.text = player.firstN
             self.player = player
