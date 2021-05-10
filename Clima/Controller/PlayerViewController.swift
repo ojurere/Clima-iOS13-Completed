@@ -29,7 +29,11 @@ class PlayerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func buttonPressed(_ sender: Any) {
+        print("I do something!")
+    }
+    
+    
     func displayResult() {
         teamIdImageView.image = UIImage(imageLiteralResourceName: results.teamName)
         lastNameLabel.text = results.lastN
