@@ -78,7 +78,7 @@ extension WeatherViewController: PlayerManagerDelegate {
 //            self.temperatureLabel.text = weather.temperatureString
 //            self.conditionImageView.image = UIImage(systemName: player.teamName)
            // self.cityLabel.text = player.firstN
-            self.firstNameLabel.text = player.firstN
+//            self.firstNameLabel.text = player.firstN
             self.player = player
             
             self.performSegue(withIdentifier: "ResultsSegue", sender: nil)
